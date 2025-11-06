@@ -1,0 +1,52 @@
+[
+  {
+    "ContainingType": "HealthBridgeAPI.Controllers.AppointmentController",
+    "Method": "GetAllAppointmentList",
+    "RelativePath": "api/appointment/allAppointmentList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthBridgeAPI.Controllers.AppointmentController",
+    "Method": "CreateAppointment",
+    "RelativePath": "api/appointment/appointmentCreate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthBridgeAPI.Controllers.PatientController",
+    "Method": "CreatePatient",
+    "RelativePath": "api/patient/createPatient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthBridgeAPI.Controllers.PatientController",
+    "Method": "GetPatientById",
+    "RelativePath": "api/patient/getPatientById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthBridgeAPI.Controllers.PatientController",
+    "Method": "GetAllPatientList",
+    "RelativePath": "api/patient/getPatientList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
