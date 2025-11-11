@@ -21,9 +21,9 @@
   },
   {
     "ContainingType": "HealthBridgeAPI.Controllers.PatientController",
-    "Method": "CreatePatient",
-    "RelativePath": "api/patient/createPatient",
-    "HttpMethod": "POST",
+    "Method": "GetAllPatients",
+    "RelativePath": "api/patient/getAllPatientList",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
@@ -32,21 +32,17 @@
   {
     "ContainingType": "HealthBridgeAPI.Controllers.PatientController",
     "Method": "GetPatientById",
-    "RelativePath": "api/patient/getPatientById",
+    "RelativePath": "api/patient/getById/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "HealthBridgeAPI.Controllers.PatientController",
-    "Method": "GetAllPatientList",
-    "RelativePath": "api/patient/getPatientList",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

@@ -1,36 +1,40 @@
-﻿using HealthBridgeAPI.Services;
+﻿using HealthBridgeAPI.Services.Implementations;
+using HealthBridgeAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace HealthBridgeAPI.Controllers
 {
     [ApiController]
     [Route("api/patient")]
-    public class PatientController: ControllerBase
+    public class PatientController : ControllerBase
     {
-        private readonly ModMedService modMedService;
-        public PatientController(ModMedService modMedService)
+        private readonly IModMedPatientService _patientService;
+
+        public PatientController(IModMedPatientService patientService)
         {
-            this.modMedService = modMedService;
+            _patientService = patientService;
         }
 
-        [HttpGet("getPatientList")]
-        public async Task<IActionResult> GetAllPatientList()
+        [HttpGet("getById/{id}")]
+
+        public async Task<IActionResult> GetPatientById(string id)
         {
-            var data = await modMedService.GetAsync("patients");
-            return Ok(data);
-            
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return BadRequest("El ID es obligatorio");
+            }
+            var result = await _patientService.GetPatientByIdAsync(id);
+            return Ok(result);
         }
 
-        [HttpGet("getPatientById")]
-        public IActionResult GetPatientById()
+        [HttpGet("getAllPatientList")]
+
+        public async Task<IActionResult> GetAllPatients()
         {
-            return Ok("Obtención de paciente por ID exitosa desde PatientController");
+            var list = await _patientService.GetAllPatientsAsync();
+            return Ok(list);
         }
 
-        [HttpPost("createPatient")]
-        public async Task<IActionResult> CreatePatient()
-        {
-            return Ok("Creación de paciente exitosa desde PatientController");
-        }
     }
 }

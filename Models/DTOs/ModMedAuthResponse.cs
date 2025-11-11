@@ -1,4 +1,4 @@
-﻿namespace HealthBridgeAPI.Models
+﻿namespace HealthBridgeAPI.Models.DTOs
 {
     public class ModMedAuthResponse
     {

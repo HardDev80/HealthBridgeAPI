@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HealthBridgeAPI.Services.Implementations;
+using HealthBridgeAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.JSInterop.Infrastructure;
 
 namespace HealthBridgeAPI.Controllers
@@ -7,11 +9,17 @@ namespace HealthBridgeAPI.Controllers
     [Route("api/appointment")]
     public class AppointmentController: ControllerBase
     {
-        [HttpGet("allAppointmentList")]
-        public IActionResult GetAllAppointmentList()
+        private readonly IModMedAppointmentService _modMedAppointmentService;
+        public AppointmentController(IModMedAppointmentService modMedAppointmentService)
         {
-           
-            return Ok("This endpoint will return all appointments.");
+            _modMedAppointmentService = modMedAppointmentService;      
+        }
+
+        [HttpGet("allAppointmentList")]
+        public async Task<IActionResult> GetAllAppointmentList()
+        {
+            var data = GetAllAppointmentList();
+            return Ok(data);
         }
 
         [HttpPost("appointmentCreate")]
