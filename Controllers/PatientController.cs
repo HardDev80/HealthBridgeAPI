@@ -1,4 +1,5 @@
-﻿using HealthBridgeAPI.Services.Implementations;
+﻿using HealthBridgeAPI.Models.DTOs;
+using HealthBridgeAPI.Services.Implementations;
 using HealthBridgeAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -34,6 +35,42 @@ namespace HealthBridgeAPI.Controllers
         {
             var list = await _patientService.GetAllPatientsAsync();
             return Ok(list);
+        }
+
+        /*[HttpGet("getPatientByBirthdateAndEmail")]
+
+        public async Task<IActionResult> GetPatientByEmailAndBirthDate()
+        {
+            var exist = await _patientService.GetPatientByEmailAndBirthDateAsync();
+            return Ok(exist);
+        }*/
+
+        [HttpPost("patientConfirmation")]
+        public async Task<IActionResult> VerifyPatient([FromBody] PatientConfirmIfExistDto request)
+        {
+            if (request == null)
+                return BadRequest("La petición no puede ser nula o vacía !!");
+
+            if (string.IsNullOrWhiteSpace(request.PatientEmail))
+                return BadRequest("El email es requerido !!.");
+
+            if (!DateTime.TryParse(request.PatientBirthDate, out var birthDate))
+                return BadRequest("Formato invalido, use yyyy-MM-dd.");
+
+            var result = await _patientService.FindPatientByEmailAndBirthDateAsync(
+                request.PatientEmail,
+                birthDate
+            );
+
+            if (result == null)
+            {
+                return NotFound(new
+                {
+                    message = "Paciente no registrado en ModMed."
+                });
+            }
+
+            return Ok(result);
         }
 
     }

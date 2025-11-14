@@ -1,16 +1,21 @@
-﻿using System.Numerics;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Numerics;
 
 namespace HealthBridgeAPI.Models.Entities
 {
     public class Practitioner
     {
-        public BigInteger PractitionerId { get; set; }
-        public BigInteger PractitionerIdentifier { get; set; }
-        public Boolean PractitionerStatus { get; set; }
-        public string PractitionerName { get; set; }
-        public string PractitionerPhotoRef { get; set; }
-        public string PractitionerSpecialty { get; set; }
-        public string PractitionerProvider {  get; set; }
+        [Key]
+        public int PractitionerId { get; set; }
+        public long PractitionerIdentifier { get; set; }
+        public bool PractitionerStatus { get; set; }
+        [Required]
+        public string? PractitionerName { get; set; }
+        public string? PractitionerPhotoRef { get; set; }
+        public string? PractitionerSpecialty { get; set; }
+        public string? PractitionerProvider {  get; set; }
+        public bool? PractitionerOnLine { get; set; }
+        public string? PractitionerLocation { get; set; }
 
     }
 }

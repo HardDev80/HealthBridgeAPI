@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\models\\entities\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:models\\entities\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\controllers\\practitionercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:controllers\\practitionercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\services\\implementations\\modmedpractitionerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:services\\implementations\\modmedpractitionerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\services\\interfaces\\imodmedpractitionerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:services\\interfaces\\imodmedpractitionerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\models\\entities\\practitioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:models\\entities\\practitioner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\services\\interfaces\\imodmedappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:services\\interfaces\\imodmedappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\services\\implementations\\modmedpatientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:services\\implementations\\modmedpatientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\services\\interfaces\\imodmedpatientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:services\\interfaces\\imodmedpatientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|c:\\users\\administrator\\source\\repos\\jvapi\\healthbridgeapi\\models\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E27E44C5-9B4A-4509-9DB8-0B864AE38539}|HealthBridgeAPI.csproj|solutionrelative:models\\entities\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,91 +46,121 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAowCYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Location.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\Location.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Location.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\Location.cs",
+              "RelativeToolTip": "Models\\Entities\\Location.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T15:28:43.818Z"
+              "WhenOpened": "2025-11-14T17:51:22.554Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PractitionerController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Controllers\\PractitionerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PractitionerController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Controllers\\PractitionerController.cs",
-              "RelativeToolTip": "Controllers\\PractitionerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\User.cs",
+              "RelativeToolTip": "Models\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T15:09:48.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ModMedPractitionerService.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Implementations\\ModMedPractitionerService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\ModMedPractitionerService.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Implementations\\ModMedPractitionerService.cs",
-              "RelativeToolTip": "Services\\Implementations\\ModMedPractitionerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T14:19:03.464Z"
+              "WhenOpened": "2025-11-14T14:25:25.185Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IModMedPractitionerService.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Interfaces\\IModMedPractitionerService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IModMedPractitionerService.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Interfaces\\IModMedPractitionerService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IModMedPractitionerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T14:13:10.617Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Practitioner.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\Practitioner.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Practitioner.cs",
               "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\Practitioner.cs",
               "RelativeToolTip": "Models\\Entities\\Practitioner.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T13:46:09.937Z"
+              "WhenOpened": "2025-11-14T14:19:05.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T12:56:17.426Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "IModMedAppointmentService.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Interfaces\\IModMedAppointmentService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IModMedAppointmentService.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Interfaces\\IModMedAppointmentService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IModMedAppointmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Title": "IModMedPatientService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Interfaces\\IModMedPatientService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IModMedPatientService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Interfaces\\IModMedPatientService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IModMedPatientService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T13:05:24.697Z"
+              "WhenOpened": "2025-11-12T17:56:01.301Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppointmentController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Controllers\\AppointmentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AppointmentController.cs",
-              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Controllers\\AppointmentController.cs",
-              "RelativeToolTip": "Controllers\\AppointmentController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ModMedPatientService.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Implementations\\ModMedPatientService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ModMedPatientService.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Services\\Implementations\\ModMedPatientService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ModMedPatientService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA1wB0AAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T21:54:26.09Z",
+              "WhenOpened": "2025-11-12T17:46:53.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\Appointment.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Appointment.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\Appointment.cs",
+              "RelativeToolTip": "Models\\Entities\\Appointment.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwC8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T16:40:22.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\Patient.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Patient.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Models\\Entities\\Patient.cs",
+              "RelativeToolTip": "Models\\Entities\\Patient.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAADwvysAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T16:38:21.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PatientController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\source\\repos\\JVAPI\\HealthBridgeAPI\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "Controllers\\PatientController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T16:34:31.452Z",
               "EditorCaption": ""
             }
           ]

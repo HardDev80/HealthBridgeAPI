@@ -16,9 +16,9 @@ namespace HealthBridgeAPI.Controllers
         }
 
         [HttpGet("allAppointmentList")]
-        public async Task<IActionResult> GetAllAppointmentList()
+        public async Task<IActionResult> AllAppointmentList()
         {
-            var data = GetAllAppointmentList();
+            var data = await _modMedAppointmentService.GetAllAppointmentList();
             return Ok(data);
         }
 

@@ -21,5 +21,7 @@ namespace HealthBridgeAPI.Services.Implementations
             var token = _configuration["ModMedSettings:AccessToken"];
             return await _modMedRepository.GetAsync(endpoint,token);
         }
+
+        
     }
 }

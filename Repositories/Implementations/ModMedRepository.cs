@@ -69,5 +69,13 @@ namespace HealthBridgeAPI.Repositories.Implementations
 
             return content;
         }
+
+        public async Task<string> GetPatientByEmailAndBirthDateAsync(string PatientEmail, string PatientBirthDate, string accessToken)
+        {
+            var endpoint = $"Patient?email={PatientEmail}&birthdate={PatientBirthDate}";
+            return await GetAsync(endpoint,accessToken);
+        }
+
+        
     }
 }

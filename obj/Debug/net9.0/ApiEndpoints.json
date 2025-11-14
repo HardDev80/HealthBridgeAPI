@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "HealthBridgeAPI.Controllers.AppointmentController",
-    "Method": "GetAllAppointmentList",
+    "Method": "AllAppointmentList",
     "RelativePath": "api/appointment/allAppointmentList",
     "HttpMethod": "GET",
     "IsController": true,
@@ -40,6 +40,22 @@
       {
         "Name": "id",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthBridgeAPI.Controllers.PatientController",
+    "Method": "VerifyPatient",
+    "RelativePath": "api/patient/patientConfirmation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "HealthBridgeAPI.Models.DTOs.PatientConfirmIfExistDto",
         "IsRequired": true
       }
     ],

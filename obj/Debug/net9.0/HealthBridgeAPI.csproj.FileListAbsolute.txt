@@ -161,4 +161,3 @@ C:\Users\Administrator\source\repos\JVAPI\HealthBridgeAPI\obj\Debug\net9.0\refin
 C:\Users\Administrator\source\repos\JVAPI\HealthBridgeAPI\obj\Debug\net9.0\HealthBridgeAPI.pdb
 C:\Users\Administrator\source\repos\JVAPI\HealthBridgeAPI\obj\Debug\net9.0\HealthBridgeAPI.genruntimeconfig.cache
 C:\Users\Administrator\source\repos\JVAPI\HealthBridgeAPI\obj\Debug\net9.0\ref\HealthBridgeAPI.dll
-C:\Users\Administrator\source\repos\JVAPI\HealthBridgeAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
