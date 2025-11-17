@@ -131,7 +131,7 @@ namespace HealthBridgeAPI.Services.Implementations
             if (patient.PatientBirthDate == null)
                 throw new ValidationException("La fecha de nacimiento es obligatoria.");
 
-            // 1️⃣ Validar si ya existe en tu BD local (por email + fecha)
+            
             bool existsLocal = await _context.Patients.AnyAsync(p =>
                 p.PatientEmail == patient.PatientEmail &&
                 p.PatientBirthDate == patient.PatientBirthDate);
@@ -139,7 +139,7 @@ namespace HealthBridgeAPI.Services.Implementations
             if (existsLocal)
                 throw new ValidationException("Ya existe un paciente con este email y fecha de nacimiento en la base local.");
 
-            // 2️⃣ Construir JSON FHIR para ModMed
+            
             var fhirPatient = new
             {
                 resourceType = "Patient",
@@ -183,11 +183,11 @@ namespace HealthBridgeAPI.Services.Implementations
                         System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
                 });
 
-            // 3️⃣ Crear en ModMed
+            
             var token = _configuration["ModMedSettings:AccessToken"];
             var responseJson = await _modMedRepository.PostAsync("Patient", jsonBody, token);
 
-            // 4️⃣ Leer el id que devolvió ModMed
+            
             string? externalId = null;
             try
             {
@@ -198,15 +198,17 @@ namespace HealthBridgeAPI.Services.Implementations
                     externalId = idProp.GetString();
                 }
             }
-            catch (JsonException)
+            catch (JsonException ex)
             {
-                // si algo pasa, externalId queda null y seguimos igual
+                throw new ValidationException(
+                    $"La respuesta de ModMed no tiene el formato esperado. Detalle: {ex.Message}. Respuesta: {responseJson}"
+                );
             }
 
-            // 5️⃣ Guardar en tu BD local
+            
             if (!string.IsNullOrWhiteSpace(externalId))
             {
-                // usa el campo que tengas para el ID externo; aquí uso PatientPMS
+                
                 patient.PatientPMS = externalId;
             }
 

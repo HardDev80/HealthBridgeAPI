@@ -74,28 +74,21 @@ namespace HealthBridgeAPI.Repositories.Implementations
 
         public async Task<string> PostAsync(string endpoint, string bodyJson, string accessToken = null)
         {
-            // 1️⃣ Escoger token: el que viene o el fijo del appsettings
             var tokenToUse = !string.IsNullOrWhiteSpace(accessToken)
                 ? accessToken
                 : _accessToken;
 
             _httpClient.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", tokenToUse);
-
-            // 2️⃣ Construir URI válida (igual que en GetAsync)
             Uri requestUri = endpoint.StartsWith("http", StringComparison.OrdinalIgnoreCase)
                 ? new Uri(endpoint)
                 : new Uri(_httpClient.BaseAddress!, endpoint.TrimStart('/'));
 
-            // 3️⃣ Contenido del body
             var content = new StringContent(bodyJson, Encoding.UTF8, "application/json");
-            // si ModMed exige "application/fhir+json", aquí lo cambias
 
-            // 4️⃣ Hacer POST
             var response = await _httpClient.PostAsync(requestUri, content);
             var responseContent = await response.Content.ReadAsStringAsync();
 
-            // 5️⃣ Manejar errores
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException(

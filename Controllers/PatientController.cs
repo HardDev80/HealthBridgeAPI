@@ -76,7 +76,6 @@ namespace HealthBridgeAPI.Controllers
         }
 
         [HttpPost("register")]
-        [HttpPost("register")]
         public async Task<IActionResult> RegisterPatient([FromBody] Patient patient)
         {
             if (patient == null)
@@ -98,7 +97,7 @@ namespace HealthBridgeAPI.Controllers
                         created.PatientLastName,
                         created.PatientEmail,
                         created.PatientBirthDate,
-                        created.PatientPMS // id ModMed
+                        created.PatientPMS
                     });
             }
             catch (ValidationException ex)
