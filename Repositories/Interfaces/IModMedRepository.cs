@@ -6,5 +6,6 @@ namespace HealthBridgeAPI.Repositories.Interfaces
     {
         Task<string> GetAsync(string endpoint, string accessToken);
         Task<string> GetPatientByEmailAndBirthDateAsync(string PatientEmail, string PatientBirthDate, string accessToken);
+        Task<string> PostAsync(string endpoint, string bodyJson, string accessToken = null);
     }
 }

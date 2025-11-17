@@ -3,6 +3,7 @@ using HealthBridgeAPI.Models.DTOs;
 using HealthBridgeAPI.Models.Entities;
 using HealthBridgeAPI.Repositories.Interfaces;
 using HealthBridgeAPI.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
@@ -120,6 +121,104 @@ namespace HealthBridgeAPI.Services.Implementations
             {
                 return null;
             }
+        }
+
+        public async Task<Patient> RegisterPatientAsync(Patient patient)
+        {
+            if (patient == null)
+                throw new ValidationException("La información del paciente no puede ser nula.");
+
+            if (patient.PatientBirthDate == null)
+                throw new ValidationException("La fecha de nacimiento es obligatoria.");
+
+            // 1️⃣ Validar si ya existe en tu BD local (por email + fecha)
+            bool existsLocal = await _context.Patients.AnyAsync(p =>
+                p.PatientEmail == patient.PatientEmail &&
+                p.PatientBirthDate == patient.PatientBirthDate);
+
+            if (existsLocal)
+                throw new ValidationException("Ya existe un paciente con este email y fecha de nacimiento en la base local.");
+
+            // 2️⃣ Construir JSON FHIR para ModMed
+            var fhirPatient = new
+            {
+                resourceType = "Patient",
+                name = new[]
+                {
+            new {
+                given  = new[] { patient.PatientFirstName ?? "" },
+                family = patient.PatientLastName ?? ""
+            }
+        },
+                gender = string.IsNullOrWhiteSpace(patient.PatientGender)
+                    ? null
+                    : patient.PatientGender.ToLower(),
+                birthDate = patient.PatientBirthDate.Value.ToString("yyyy-MM-dd"),
+                telecom = new[]
+                {
+            new {
+                system = "phone",
+                value  = patient.PatientMobilePhone,
+                use    = "mobile"
+            },
+            new {
+                system = "email",
+                value  = patient.PatientEmail,
+                use    = "home"
+            }
+        },
+                address = string.IsNullOrWhiteSpace(patient.PatientAddress)
+                    ? null
+                    : new[]
+                    {
+                new { text = patient.PatientAddress }
+                    }
+            };
+
+            var jsonBody = JsonSerializer.Serialize(
+                fhirPatient,
+                new JsonSerializerOptions
+                {
+                    DefaultIgnoreCondition =
+                        System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+                });
+
+            // 3️⃣ Crear en ModMed
+            var token = _configuration["ModMedSettings:AccessToken"];
+            var responseJson = await _modMedRepository.PostAsync("Patient", jsonBody, token);
+
+            // 4️⃣ Leer el id que devolvió ModMed
+            string? externalId = null;
+            try
+            {
+                using var doc = JsonDocument.Parse(responseJson);
+                var root = doc.RootElement;
+                if (root.TryGetProperty("id", out var idProp))
+                {
+                    externalId = idProp.GetString();
+                }
+            }
+            catch (JsonException)
+            {
+                // si algo pasa, externalId queda null y seguimos igual
+            }
+
+            // 5️⃣ Guardar en tu BD local
+            if (!string.IsNullOrWhiteSpace(externalId))
+            {
+                // usa el campo que tengas para el ID externo; aquí uso PatientPMS
+                patient.PatientPMS = externalId;
+            }
+
+            if (string.IsNullOrWhiteSpace(patient.PatientStatus))
+            {
+                patient.PatientStatus = "Active";
+            }
+
+            _context.Patients.Add(patient);
+            await _context.SaveChangesAsync();
+
+            return patient;
         }
 
     }

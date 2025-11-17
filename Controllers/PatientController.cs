@@ -1,7 +1,9 @@
 ﻿using HealthBridgeAPI.Models.DTOs;
+using HealthBridgeAPI.Models.Entities;
 using HealthBridgeAPI.Services.Implementations;
 using HealthBridgeAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace HealthBridgeAPI.Controllers
@@ -71,6 +73,38 @@ namespace HealthBridgeAPI.Controllers
             }
 
             return Ok(result);
+        }
+
+        [HttpPost("register")]
+        [HttpPost("register")]
+        public async Task<IActionResult> RegisterPatient([FromBody] Patient patient)
+        {
+            if (patient == null)
+                return BadRequest("La información del paciente es obligatoria.");
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var created = await _patientService.RegisterPatientAsync(patient);
+
+                return CreatedAtAction(nameof(GetPatientById),
+                    new { id = created.PatientId },
+                    new
+                    {
+                        created.PatientId,
+                        created.PatientFirstName,
+                        created.PatientLastName,
+                        created.PatientEmail,
+                        created.PatientBirthDate,
+                        created.PatientPMS // id ModMed
+                    });
+            }
+            catch (ValidationException ex)
+            {
+                return Conflict(new { message = ex.Message });
+            }
         }
 
     }
