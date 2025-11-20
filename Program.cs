@@ -1,9 +1,11 @@
-﻿using HealthBridgeAPI.Data;
+﻿using System.Threading.RateLimiting;
+using HealthBridgeAPI.Data;
 using HealthBridgeAPI.Repositories.Implementations;
 using HealthBridgeAPI.Repositories.Interfaces;
 using HealthBridgeAPI.Services.Implementations;
 using HealthBridgeAPI.Services.Interfaces;
 using HealthBridgeAPI.Utils;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,7 +36,28 @@ builder.Services.AddScoped<IModMedAppointmentService, ModMedAppointmentService>(
 builder.Services.AddScoped<IModMedPractitionerService, ModMedPractitionerService>();
 
 // -----------------------------------------------------------------------------
-// CORS (permite peticiones desde tu frontend en GitHub Pages o React)
+// RATE LIMITING (límite global por IP)
+// -----------------------------------------------------------------------------
+builder.Services.AddRateLimiter(options =>
+{
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
+    {
+        var ip = httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
+        return RateLimitPartition.GetFixedWindowLimiter(ip, _ => new FixedWindowRateLimiterOptions
+        {
+            PermitLimit = 100,
+            Window = TimeSpan.FromMinutes(1),  
+            QueueLimit = 0,
+            QueueProcessingOrder = QueueProcessingOrder.OldestFirst
+        });
+    });
+
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+});
+
+// -----------------------------------------------------------------------------
+// CORS
 // -----------------------------------------------------------------------------
 builder.Services.AddCors(options =>
 {
@@ -63,6 +86,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseDeveloperExceptionPage();
 
     try
     {
@@ -78,12 +102,31 @@ if (app.Environment.IsDevelopment())
         Console.WriteLine($"Error al aplicar migraciones: {ex.Message}");
     }
 }
+else
+{
+    app.UseExceptionHandler("/error");
+    app.UseHsts();
+}
 
 // -----------------------------------------------------------------------------
 // MIDDLEWARES
 // -----------------------------------------------------------------------------
+
+app.Use(async (context, next) =>
+{
+    context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+    context.Response.Headers["X-Frame-Options"] = "DENY";
+    context.Response.Headers["X-XSS-Protection"] = "1; mode=block";
+    context.Response.Headers["Referrer-Policy"] = "no-referrer";
+    context.Response.Headers["X-Permitted-Cross-Domain-Policies"] = "none";
+    await next();
+});
+
 app.UseHttpsRedirection();
-app.UseCors("AllowAll");
+
+app.UseCors("AllowAll");       
+app.UseRateLimiter();         
+
 app.UseAuthorization();
 
 // -----------------------------------------------------------------------------
